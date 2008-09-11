@@ -1,15 +1,9 @@
 package hudson.plugins.google.analytics;
 
-import hudson.model.FreeStyleProject;
 import hudson.model.PageDecorator;
-import hudson.scm.SCM;
-import hudson.scm.SCMS;
-
 import org.jvnet.hudson.test.HudsonTestCase;
 
 import com.gargoylesoftware.htmlunit.WebAssert;
-import com.gargoylesoftware.htmlunit.html.HtmlButton;
-import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class FooterWebTest extends HudsonTestCase {
@@ -38,7 +32,7 @@ public class FooterWebTest extends HudsonTestCase {
                 page.asXml().contains("_gat._getTracker(\"AProfileId\")"));
     }
     /**
-     * Asserts that the footer contains the profile within quotes.
+     * Asserts that the footer does not contain the google analytics script.
      */
     public void testEmptyFooterIfEmptyProfileId() throws Exception {
         pageDecorator = new GoogleAnalyticsPageDecorator("");
