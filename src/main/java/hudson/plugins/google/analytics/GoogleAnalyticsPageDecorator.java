@@ -11,6 +11,11 @@ public class GoogleAnalyticsPageDecorator extends PageDecorator {
 
     private String profileId;
 
+    public GoogleAnalyticsPageDecorator(String profileId) {
+        this();
+        this.profileId = profileId;
+    }
+    
     protected GoogleAnalyticsPageDecorator() {
         super(GoogleAnalyticsPageDecorator.class);
         load();
@@ -29,7 +34,7 @@ public class GoogleAnalyticsPageDecorator extends PageDecorator {
     }
 
     public String getProfileId() {
-        return profileId;
+        return Util.fixEmpty(profileId);
     }
 
     public void setProfileId(String profileId) {
