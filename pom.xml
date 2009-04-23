@@ -11,7 +11,7 @@
   <packaging>hpi</packaging>
   <name>Hudson Google Analytics Plug-in</name>
   <version>1.2-SNAPSHOT</version>
-  <url>http://hudson.gotdns.com/wiki/display/HUDSON/Google+Analytics+Plugin</url>
+  <url>http://wiki.hudson-ci.org/display/HUDSON/Google+Analytics+Plugin</url>
   
   <licenses>
     <license>
