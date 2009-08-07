@@ -2,21 +2,25 @@ package hudson.plugins.google.analytics;
 
 import net.sf.json.JSONObject;
 
+import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
+import hudson.Extension;
 import hudson.Util;
 import hudson.model.PageDecorator;
 
+@Extension
 public class GoogleAnalyticsPageDecorator extends PageDecorator {
 
     private String profileId;
 
+    @DataBoundConstructor
     public GoogleAnalyticsPageDecorator(String profileId) {
         this();
         this.profileId = profileId;
     }
     
-    protected GoogleAnalyticsPageDecorator() {
+    public GoogleAnalyticsPageDecorator() {
         super(GoogleAnalyticsPageDecorator.class);
         load();
     }
