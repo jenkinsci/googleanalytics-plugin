@@ -24,6 +24,18 @@ public class FooterWebTest extends HudsonTestCase {
                 page.asXml().contains("_gat._getTracker(\"AProfileId\")"));
     }
     /**
+     * Asserts that the footer contains the profile within quotes.
+     */
+    @LocalData
+    public void testFooterContainsProfileWithDomainName() throws Exception {
+        WebClient webClient = new WebClient();
+        webClient.setJavaScriptEnabled(false);
+        HtmlPage page = webClient.goTo("configure");
+        WebAssert.assertInputContainsValue(page, "_.domainName", "ADomain");
+        assertTrue("The page text did not contain the profile", 
+                page.asXml().contains("pageTracker._setDomainName(\"ADomain\")"));
+    }
+    /**
      * Asserts that the footer does not contain the google analytics script.
      */
     public void testEmptyFooterIfEmptyProfileId() throws Exception {
