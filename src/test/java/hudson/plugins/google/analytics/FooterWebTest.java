@@ -57,6 +57,6 @@ public class FooterWebTest extends HudsonTestCase {
         HtmlForm form = webClient.goTo("configure").getFormByName("config");
         form.getInputByName("_.profileId").setValueAttribute("NewProfile");
         form.submit((HtmlButton)last(form.getHtmlElementsByTagName("button")));
-        assertEquals("The new profile id wasnt correct", "NewProfile", ((GoogleAnalyticsPageDecorator) PageDecorator.ALL.get(0)).getProfileId());
+        assertEquals("The new profile id wasnt correct", "NewProfile", ((GoogleAnalyticsPageDecorator) PageDecorator.all().get(0)).getProfileId());
     }    
 }
