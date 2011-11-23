@@ -11,7 +11,7 @@
   <packaging>hpi</packaging>
   <name>Hudson Google Analytics Plug-in</name>
   <version>1.3-SNAPSHOT</version>
-  <url>http://wiki.hudson-ci.org/display/HUDSON/Google+Analytics+Plugin</url>
+  <url>http://wiki.jenkins-ci.org/display/JENKINS/Google+Analytics+Plugin</url>
 
   <developers>
     <developer>
@@ -28,4 +28,29 @@
       <comments>All source code is under the MIT license.</comments>
     </license>
   </licenses>
+
+  <scm>
+    <connection>scm:git:ssh://github.com/jenkinsci/googleanalytics-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/googleanalytics-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/googleanalytics-plugin</url>
+  </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <goals>deploy</goals>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>maven.jenkins-ci.org</id>
+      <url>http://maven.jenkins-ci.org:8081/content/repositories/releases/</url>
+    </repository>
+  </distributionManagement>
+
 </project>
